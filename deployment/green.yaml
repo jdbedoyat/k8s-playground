@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: app-sringboot
+      version: green
+  template:
+    metadata:
+      labels:
+        app: app-sringboot
+        version: green
+    spec:
+      containers:
+        - name: app-sringboot
+          image: green-image
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3

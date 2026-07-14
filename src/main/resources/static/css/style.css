@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-image:
+            radial-gradient(circle,#326CE540 1px,transparent 1px);
+    background-size:40px 40px;
+    animation:move 15s linear infinite;
+    z-index:-1;
+}
+
+@keyframes move{
+    0%{
+        transform:translateY(0);
+    }
+    100%{
+        transform:translateY(-40px);
+    }
+}
+
+header{
+    text-align:center;
+    padding:60px;
+}
+
+.logo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+
+}
+
+.logo i{
+    font-size:55px;
+    color:#326CE5;
+    animation:spin 18s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    opacity:.8;
+    font-size:18px;
+    margin-top:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:50px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:40px;
+    text-align:center;
+    transition:.4s;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 0 30px #326CE5;
+}
+
+.card i{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.java{
+    color:#f89820;
+}
+
+.docker{
+    color:#2496ED;
+}
+
+.kubernetes{
+    color:#326CE5;
+}
+
+.minikube{
+    color:#6DB33F;
+}
+
+.status{
+    padding:40px;
+    text-align:center;
+}
+
+.status h2{
+    margin-bottom:30px;
+}
+
+.status-box{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.status-box div{
+    padding:20px 30px;
+    background:#1e293b;
+    border-radius:12px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    display:inline-block;
+    border-radius:50%;
+    background:#00ff88;
+    margin-right:8px;
+    box-shadow:0 0 12px #00ff88;
+}
+
+footer{
+    padding:30px;
+    text-align:center;
+    opacity:.6;
+}
